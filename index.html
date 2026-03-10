@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mr.LOT | Закрытое сообщество</title>
+    <title>Mr.LOT — закрытое сообщество</title>
+    <!-- Favicon / иконка для вкладок браузера -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234f72ca'/%3E%3Cstop offset='100%25' stop-color='%237b68ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EL%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -20,6 +22,7 @@
             color: #e0e4f0;
             line-height: 1.5;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -60,7 +63,6 @@
         section {
             position: relative;
             z-index: 1;
-            scroll-margin-top: 80px;
         }
 
         .navbar {
@@ -78,7 +80,7 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
         }
 
         .logo {
@@ -97,20 +99,19 @@
             flex-wrap: wrap;
         }
 
-        .nav-link {
+        .nav-links a {
             color: #a0a8c0;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
             font-size: 15px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-family: 'Inter', sans-serif;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
         }
 
-        .nav-link:hover {
+        .nav-links a:hover {
             color: #fff;
+            border-bottom-color: #4f72ca;
         }
 
         .hero {
@@ -160,6 +161,7 @@
             justify-content: center;
             gap: 60px;
             margin-top: 50px;
+            flex-wrap: wrap;
         }
 
         .stat-item {
@@ -182,6 +184,7 @@
 
         .features {
             padding: 100px 0;
+            scroll-margin-top: 80px;
         }
 
         .section-title {
@@ -246,6 +249,7 @@
 
         .pricing {
             padding: 80px 0;
+            scroll-margin-top: 80px;
         }
 
         .pricing-grid {
@@ -383,6 +387,7 @@
 
         .how-it-works {
             padding: 100px 0;
+            scroll-margin-top: 80px;
         }
 
         .steps {
@@ -428,6 +433,7 @@
 
         .faq {
             padding: 80px 0;
+            scroll-margin-top: 80px;
         }
 
         .faq-grid {
@@ -442,6 +448,11 @@
             padding: 20px 24px;
             margin-bottom: 16px;
             cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .faq-item:hover {
+            background: rgba(30, 40, 60, 0.6);
         }
 
         .faq-question {
@@ -472,6 +483,7 @@
         .contacts {
             padding: 60px 0;
             background: rgba(10, 15, 30, 0.5);
+            scroll-margin-top: 80px;
         }
 
         .contacts-grid {
@@ -481,17 +493,20 @@
             margin-top: 40px;
         }
 
-        .contacts-info {
+        .contacts-info, .docs-links {
             background: rgba(20, 28, 44, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 24px;
             padding: 32px;
+            backdrop-filter: blur(10px);
         }
 
-        .contacts-info h3 {
+        .contacts-info h3, .docs-links h3 {
             font-size: 20px;
             color: #fff;
             margin-bottom: 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 12px;
         }
 
         .contacts-info p {
@@ -499,23 +514,11 @@
             margin-bottom: 16px;
             font-size: 15px;
             line-height: 1.6;
+            word-break: break-word;
         }
 
         .contacts-info strong {
             color: #a8b9ff;
-        }
-
-        .docs-links {
-            background: rgba(20, 28, 44, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
-            padding: 32px;
-        }
-
-        .docs-links h3 {
-            font-size: 20px;
-            color: #fff;
-            margin-bottom: 24px;
         }
 
         .doc-link {
@@ -533,6 +536,7 @@
         .doc-link:hover {
             background: rgba(79, 114, 202, 0.2);
             border-color: #4f72ca;
+            transform: translateX(5px);
         }
 
         .doc-link small {
@@ -560,6 +564,39 @@
             font-size: 14px;
         }
 
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(79, 114, 202, 0.8);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 99;
+            text-decoration: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #4f72ca;
+            transform: translateY(-5px);
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -582,6 +619,12 @@
             width: 90%;
             border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
+            animation: modalFade 0.3s;
+        }
+
+        @keyframes modalFade {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         .modal-content h2 {
@@ -606,6 +649,7 @@
             font-weight: 600;
             cursor: pointer;
             font-size: 16px;
+            transition: opacity 0.3s;
         }
 
         .modal-content .modal-close:hover {
@@ -625,6 +669,7 @@
             
             .nav-links {
                 justify-content: center;
+                gap: 15px;
             }
             
             .hero-stats {
@@ -644,6 +689,11 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+            }
         }
     </style>
 </head>
@@ -652,11 +702,11 @@
         <div class="container nav-content">
             <div class="logo">Mr.LOT</div>
             <div class="nav-links">
-                <button class="nav-link" onclick="scrollToSection('features')">Возможности</button>
-                <button class="nav-link" onclick="scrollToSection('pricing')">Тарифы</button>
-                <button class="nav-link" onclick="scrollToSection('how')">Как работает</button>
-                <button class="nav-link" onclick="scrollToSection('faq')">FAQ</button>
-                <button class="nav-link" onclick="scrollToSection('contacts')">Контакты</button>
+                <a href="#features">Возможности</a>
+                <a href="#pricing">Тарифы</a>
+                <a href="#how">Как работает</a>
+                <a href="#faq">Вопросы</a>
+                <a href="#contacts">Контакты</a>
             </div>
         </div>
     </nav>
@@ -666,7 +716,7 @@
             <div class="badge">🚀 Закрытый клуб Mr.LOT</div>
             <h1>Эксклюзивный доступ<br>к базе знаний <span>Mr.LOT</span></h1>
             <p>Ежедневные инсайты, закрытые материалы и стабильный доступ к ресурсам сообщества 24/7</p>
-            <button class="btn-primary" onclick="scrollToSection('pricing')" style="display: inline-block; width: auto; padding: 16px 48px; border: none; font-family: 'Inter', sans-serif;">Выбрать тариф</button>
+            <a href="#pricing" class="btn-primary" style="display: inline-block; width: auto; padding: 16px 48px;">Выбрать тариф</a>
             
             <div class="hero-stats">
                 <div class="stat-item">
@@ -723,7 +773,7 @@
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="plan-name">Месячный</div>
-                    <div class="price">199₽ <span></span></div>
+                    <div class="price">199₽</div>
                     <div class="period">за 30 дней</div>
                     <ul class="plan-features">
                         <li>Доступ ко всем материалам</li>
@@ -738,7 +788,7 @@
                     <div class="popular-badge">ХИТ</div>
                     <div class="plan-name">Базовый</div>
                     <div class="price-old">597₽</div>
-                    <div class="price">499₽ <span></span></div>
+                    <div class="price">499₽</div>
                     <div class="period">за 3 месяца</div>
                     <div class="savings">Экономия 15%</div>
                     <ul class="plan-features">
@@ -753,7 +803,7 @@
                 <div class="pricing-card">
                     <div class="plan-name">Оптимальный</div>
                     <div class="price-old">1194₽</div>
-                    <div class="price">999₽ <span></span></div>
+                    <div class="price">999₽</div>
                     <div class="period">за 6 месяцев</div>
                     <div class="savings">Экономия 20%</div>
                     <ul class="plan-features">
@@ -768,7 +818,7 @@
                 <div class="pricing-card">
                     <div class="plan-name">Премиум</div>
                     <div class="price-old">2388₽</div>
-                    <div class="price">1188₽ <span></span></div>
+                    <div class="price">1188₽</div>
                     <div class="period">за 12 месяцев</div>
                     <div class="savings">🔥 Всего 99₽/мес</div>
                     <ul class="plan-features">
@@ -828,7 +878,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        Сразу после оплаты вы будете перенаправлены на страницу с ссылкой на нашего Telegram-бота: https://t.me/mrlotvpn_bot. Бот выдаст вам персональную инструкцию по подключению.
+                        Сразу после оплаты вы будете перенаправлены на страницу с ссылкой на нашего Telegram-бота: <strong>https://t.me/mrlotvpn_bot</strong>. Бот выдаст вам персональную инструкцию по подключению.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -871,19 +921,19 @@
                 <div class="contacts-info">
                     <h3>ИП ВАСБУЛАТОВ МИХАИЛ АНДРЕЕВИЧ</h3>
                     <p><strong>Юр. адрес:</strong> РОССИЯ, РЕСП ЧЕЧЕНСКАЯ, ГРОЗНЕНСКИЙ Р-Н, С ТОЛСТОЙ-ЮРТ, УЛ ИМ. Р. И.</p>
-                    <p><strong>Телефон:</strong> +79060578887</p>
-                    <p><strong>Email:</strong> lottvinfo@yandex.ru</p>
+                    <p><strong>Телефон:</strong> <a href="tel:+79060578887" style="color: #a8b9ff; text-decoration: none;">+79060578887</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:lottvinfo@yandex.ru" style="color: #a8b9ff; text-decoration: none;">lottvinfo@yandex.ru</a></p>
                     <p><strong>ОГРНИП:</strong> 324200000017347</p>
                     <p><strong>ИНН:</strong> 501720099856</p>
                 </div>
                 
                 <div class="docs-links">
                     <h3>Документы</h3>
-                    <a href="https://watbot.cc/docs/privacy" class="doc-link" target="_blank">
+                    <a href="https://watbot.cc/docs/privacy" class="doc-link" target="_blank" rel="noopener">
                         Политика обработки персональных данных
                         <small>https://watbot.cc/docs/privacy</small>
                     </a>
-                    <a href="https://watbot.cc/docs/offer" class="doc-link" target="_blank">
+                    <a href="https://watbot.cc/docs/offer" class="doc-link" target="_blank" rel="noopener">
                         Публичная оферта
                         <small>https://watbot.cc/docs/offer</small>
                     </a>
@@ -896,9 +946,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="copyright">© 2025 Mr.LOT Club. Все права защищены.</div>
+                <div class="copyright">Telegram: @mrlotvpn_bot</div>
             </div>
         </div>
     </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Наверх">↑</a>
 
     <div id="paymentModal" class="modal">
         <div class="modal-content">
@@ -910,20 +963,7 @@
     </div>
 
     <script>
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                const navbarHeight = 80;
-                const elementPosition = section.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-
+        // FAQ аккордеон
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('click', () => {
                 item.classList.toggle('active');
@@ -932,6 +972,7 @@
             });
         });
 
+        // Модальное окно
         function showModal() {
             document.getElementById('paymentModal').style.display = 'flex';
         }
@@ -947,6 +988,40 @@
             }
         }
 
+        // Кнопка "наверх"
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Плавная прокрутка для якорей в навигации
+        document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Анимация появления при скролле
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -954,9 +1029,9 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        });
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.feature-card, .pricing-card, .step').forEach(el => {
+        document.querySelectorAll('.feature-card, .pricing-card, .step, .contacts-info, .docs-links').forEach(el => {
             el.style.opacity = 0;
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s, transform 0.6s';
